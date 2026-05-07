@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "sistem-qurban-scan",
+  "private_key_id": "935d2c1a2717eb67702ddc509060db88db803146",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDG6SooyqDvPe3C\nhcy1iX1Krk92XFRlyyfVq6qSF2Et6AbObXOpKqpl+tcIbUD/OPwL/abItAJ43+rk\nVLb6v0nKDi1kwj6Xcsogpytf08YtJS9kVktfhXz9hUuoi8LBobrdsc7i91mEQfiS\nA4uT3Ppc3H2FreoGHLsAE6TNe8Q7Ze/jG2cO9KIFQFKyavA7LjnqwQrMEQVw/l96\nvnHgQe+ZytBncusHtsgrVvWkdYhtH7TOvVR95SyfK4cjGkIQbslIDzFnbEzky0fw\nlpBNkj5UUgrsG1h/TQ8twUWXsez51JSHXKZVZzNiuZS9x8w2bkhVPf9uUbhbC7mt\ni3AyPOGDAgMBAAECggEABhPozF9IpJbFVYzGEQP29pm15t1yXLvk5zP8HcOmHgN5\ndcRFZPVfSIduG51O/51roigpePd7Hdtlr31hK+89X3WocGw5AmKpB29kNWTgqM96\nj7vNSMlo5Mw2YBuJI2aAMbb1pdy9+PsVD80Y7jcx1TWNhlCmlnI5SorPHdI60D/C\n1dPQtRqSsZtDTu+jYgl7CE5m3lWlqskAXDs4MJhE9s0lc82xoAvT7ZMkLGbKH22i\npsLS8dQnEw9VqJfL80HF13INLQ8+grKrUD9DmPdidvZVptsCLftAz0eUnZV7UGgl\n+KkJlrdqcP6EeItM9HUWk5sWfbUZtO5pWEX7WilPrQKBgQDnSTbWNmWUmshHET90\ncrkGRKnGPEX3Li0SwBwdXwRNoPSGHnuFnPQEsQuephe/kxnaeMGBLNho3o899Qxm\nRsPu870x9WduvLHu2upSTm8WTRL/MbTpN0NMhXtdqkCfmfegFZUC9qgio7YSm/Mh\nneqRPQZnlt+ApCOPWSE3kKM3VwKBgQDcKlVAovU4/IgqB7RcDmdi2Vz7eIY2qstF\ny8EmUHmVDRXsEr5TGu47iDhS5bKq2GRRDHqNfw9VdonpsUmupz/3Qdxu6GjEFarD\nxytFciHCSX4/iwPNLmotuCOof2x1FUXtX7B3ncVfkjYCedBiRObJepG1RWCF0h8q\nTl1bcwuntQKBgFHTUzVCFXoXsJeEAKEgHVmcXTwnAtHKYmPp14iEny8frKLukeDZ\ngHNQd73vISPD1Te31S3wQbgIVUEkOvjMPHGDhgHwwmEpHQJWLORln2OSbRAf89M2\nm/asmtKucyKEBFl8iTV9MkrfBIFc7w2LovszTdrEQ9ptN691Zw0TfMsNAoGAfvEd\npJ4Q3CGm9OzqTiWz8Ke5V/kfEYgamgyoOkouQAWCfVI1UL93WvXo28s64AzSknSq\neMko8zLcw9SH0l72n77mtT/loCGKC0XcKjdrRZWQaFzj/Trk16WTUcTeqQdyATKq\nEd3y/m7UG0tXHkHx+3tjZewxghcsBv2WEHNd5f0CgYAiiymgfFSGWeCYb7BCXhuM\nx0ipLToOHwO+U/+usNvrPtfd0jyWDpP24xHJHFj++5sXqJpznnXA4ib+TsGuYM8O\nQZWMD3v2DyLvr+NC8AyZceGwQKCAtbFcw4cSjzHhRF3dY0i9wBjNJNBhVBJHAmRW\n4bgb6QeY0097luptdiX4jQ==\n-----END PRIVATE KEY-----\n",
+  "client_email": "panitia-qurban@sistem-qurban-scan.iam.gserviceaccount.com",
+  "client_id": "109914634177259139441",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/panitia-qurban%40sistem-qurban-scan.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
