@@ -10,8 +10,12 @@ import json
 scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
 
 # Mengambil data mentah JSON dari Secrets
+# --- BAGIAN KONFIGURASI YANG DI-UPDATE ---
 try:
-    info_dict = json.loads(st.secrets["gcp_service_account"]["json_data"])
+    # .strip() akan membuang spasi atau baris kosong yang tidak sengaja terbawa
+    raw_json = st.secrets["gcp_service_account"]["json_data"].strip()
+    info_dict = json.loads(raw_json)
+    
     creds = ServiceAccountCredentials.from_json_dict(info_dict, scope)
     client = gspread.authorize(creds)
     sheet = client.open("Database_Qurban_MAR").get_worksheet(0)
