@@ -7,7 +7,7 @@ import time
 
 # 1. Konfigurasi Google Sheets
 scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
-creds = ServiceAccountCredentials.from_json_keyfile_name('sistem-qurban-scan.json', scope)
+creds = ServiceAccountCredentials.from_json_dict(st.secrets["gcp_service_account"], scope)
 client = gspread.authorize(creds)
 sheet = client.open("Database_Qurban_MAR").get_worksheet(0)
 
