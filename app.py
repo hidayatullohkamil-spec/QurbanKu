@@ -3,22 +3,21 @@ import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 import json
 
-# --- KONFIGURASI BARU ---
+# --- KONFIGURASI KONEKSI GOOGLE SHEETS ---
 scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
 
 try:
-    # Mengambil string mentah dan membersihkan spasi di ujung-ujungnya
+    # Mengambil data dari Secrets dan membersihkan spasi liar
     raw_data = st.secrets["isi_json"].strip()
-    
-    # Mengonversi string menjadi dictionary Python
     info_dict = json.loads(raw_data)
     
     creds = ServiceAccountCredentials.from_json_dict(info_dict, scope)
     client = gspread.authorize(creds)
+    # Pastikan nama file Spreadsheet ini sudah benar
     sheet = client.open("Database_Qurban_MAR").get_worksheet(0)
 except Exception as e:
     st.error(f"⚠️ Masalah Koneksi: {e}")
-    st.info("Saran: Periksa kembali isi JSON di menu Secrets.")
+    st.info("Saran: Periksa kembali isi JSON di menu Secrets Streamlit.")
     st.stop()
 
 st.set_page_config(page_title="Check-In Masjid Ar-Rahmah", layout="centered")
