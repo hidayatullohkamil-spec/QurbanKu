@@ -1,21 +1,27 @@
-import json
 import streamlit as st
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 from datetime import datetime, timedelta
 from streamlit_qrcode_scanner import qrcode_scanner
 import time
+import json
 
-# 1. Konfigurasi Google Sheets
+# 1. Konfigurasi Google Sheets (MENGGUNAKAN SECRETS)
 scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
-creds = ServiceAccountCredentials.from_json_dict(st.secrets["gcp_service_account"], scope)
-client = gspread.authorize(creds)
-sheet = client.open("Database_Qurban_MAR").get_worksheet(0)
 
+# Mengambil data mentah JSON dari Secrets
+try:
+    info_dict = json.loads(st.secrets["gcp_service_account"]["json_data"])
+    creds = ServiceAccountCredentials.from_json_dict(info_dict, scope)
+    client = gspread.authorize(creds)
+    sheet = client.open("Database_Qurban_MAR").get_worksheet(0)
+except Exception as e:
+    st.error(f"Gagal koneksi ke Google Sheets: {e}")
+    st.stop()
 
 st.set_page_config(page_title="Check-In Masjid Ar-Rahmah", layout="centered")
 
-# --- CSS TEMA PUTIH (LINCAH) ---
+# --- CSS TEMA PUTIH ---
 st.markdown("""
     <style>
     .stApp { background-color: #ffffff !important; }
@@ -81,14 +87,12 @@ elif st.session_state.step == "proses_manual":
             st.rerun()
     if st.button("⬅️ Kembali"): reset()
 
-# --- PROSES VERIFIKASI ---
 elif st.session_state.step in ["tampil_data", "sukses"] and st.session_state.id_target:
     try:
         cell = sheet.find(st.session_state.id_target)
         row_num = cell.row
         data = sheet.row_values(row_num)
 
-        # REVISI INDEKS KOLOM DISINI:
         email = data[1]
         nama = data[2]
         nik = data[3]
