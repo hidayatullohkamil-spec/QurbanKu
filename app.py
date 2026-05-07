@@ -1,26 +1,24 @@
 import streamlit as st
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
-from datetime import datetime, timedelta
-from streamlit_qrcode_scanner import qrcode_scanner
-import time
 import json
 
-# 1. Konfigurasi Google Sheets (MENGGUNAKAN SECRETS)
+# --- KONFIGURASI BARU ---
 scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
 
-# Mengambil data mentah JSON dari Secrets
-# --- BAGIAN KONFIGURASI YANG DI-UPDATE ---
 try:
-    # .strip() akan membuang spasi atau baris kosong yang tidak sengaja terbawa
-    raw_json = st.secrets["gcp_service_account"]["json_data"].strip()
-    info_dict = json.loads(raw_json)
+    # Mengambil string mentah dan membersihkan spasi di ujung-ujungnya
+    raw_data = st.secrets["isi_json"].strip()
+    
+    # Mengonversi string menjadi dictionary Python
+    info_dict = json.loads(raw_data)
     
     creds = ServiceAccountCredentials.from_json_dict(info_dict, scope)
     client = gspread.authorize(creds)
     sheet = client.open("Database_Qurban_MAR").get_worksheet(0)
 except Exception as e:
-    st.error(f"Gagal koneksi ke Google Sheets: {e}")
+    st.error(f"⚠️ Masalah Koneksi: {e}")
+    st.info("Saran: Periksa kembali isi JSON di menu Secrets.")
     st.stop()
 
 st.set_page_config(page_title="Check-In Masjid Ar-Rahmah", layout="centered")
