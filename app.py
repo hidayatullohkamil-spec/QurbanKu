@@ -11,6 +11,7 @@ creds = ServiceAccountCredentials.from_json_dict(st.secrets["gcp_service_account
 client = gspread.authorize(creds)
 sheet = client.open("Database_Qurban_MAR").get_worksheet(0)
 
+
 st.set_page_config(page_title="Check-In Masjid Ar-Rahmah", layout="centered")
 
 # --- CSS TEMA PUTIH (LINCAH) ---
